@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 export const RevealLinks = () => {
@@ -15,7 +14,13 @@ export const RevealLinks = () => {
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
-export const FlipLink = ({ children, href }) => {
+export const FlipLink = ({
+  children,
+  href,
+}: {
+  children: string;
+  href: string;
+}) => {
   return (
     <motion.a
       initial="initial"
@@ -75,3 +80,5 @@ export const FlipLink = ({ children, href }) => {
     </motion.a>
   );
 };
+
+export default FlipLink;

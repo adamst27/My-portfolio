@@ -32,16 +32,6 @@ const Hero = () => {
     },
   };
 
-  const floatVariants = {
-    hover: {
-      y: -5,
-      transition: {
-        yoyo: Infinity,
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <section className="min-h-screen flex flex-col justify-center items-center relative py-12 md:py-20 overflow-hidden text-gray-200">
       <div className="absolute top-0 z-[2] h-full w-screen bg-slate-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
@@ -115,7 +105,10 @@ const Hero = () => {
           variants={itemVariants}
         >
           {socials.map((social, idx) => (
-            <motion.div className="flex  justify-center items-center col-span-1 row-span-1 bg-indigo-800 rounded-lg">
+            <motion.div
+              key={idx}
+              className="flex  justify-center items-center col-span-1 row-span-1 bg-indigo-800 rounded-lg"
+            >
               <a
                 href={social.link}
                 className="w-full h-full flex justify-center items-center"
