@@ -2,16 +2,21 @@ import { IconBadgeTmFilled } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 const About = () => {
   return (
-    <section className=" w-full py-28 px-16 bg-slate-950">
-      <h2 className="text-indigo-500 text-left font-extrabold text-5xl  uppercase">
+    <section className=" w-full py-28 px-6 lg:px-16 bg-slate-950">
+      <h2 className="text-indigo-500 text-left font-extrabold text-3xl lg:text-5xl mb-2  uppercase">
         Helping brands reach their full potential
       </h2>
-      <div className="relative w-full h-[0.2px] bg-gray-800 z-10 mt-20">
+      <div className="relative w-full h-[0.2px] bg-gray-800 z-10 my-20 lg:block hidden">
         <div className="absolute  bg-indigo-700 right-1/4 top-[-60px] rounded-full flex justify-center items-center w-32 h-32 z-20">
           <IconBadgeTmFilled size={80} color="white" />
         </div>
       </div>
-      <div className="grid grid-cols-2 w-full my-16">
+      <img
+        src="https://images.pexels.com/photos/3888151/pexels-photo-3888151.jpeg"
+        alt="about-image"
+        className="w-full h-full object-cover object-center rounded-lg"
+      />
+      <div className="my-8">
         <motion.div className=" flex flex-col gap-4 ">
           <h3 className="text-3xl font-bold text-indigo-400">MY STORY</h3>
           <p className="text-indigo-200 text-lg leading-relaxed flex flex-col gap-2">

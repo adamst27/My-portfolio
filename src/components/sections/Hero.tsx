@@ -6,6 +6,7 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import AnimatedCounter from "../animations/AnimatedCounter";
 
 const Hero = () => {
   const containerVariants = {
@@ -130,7 +131,10 @@ const Hero = () => {
               variants={itemVariants}
               className="flex flex-col gap-2 justify-center items-center bg-indigo-800 p-6 rounded-lg"
             >
-              <p className="text-3xl font-bold text-white">{stat.value}</p>
+              <p className="text-3xl font-bold text-white">
+                <AnimatedCounter from={stat.from} to={stat.to} />
+                {stat.char}
+              </p>
               <p className="text-lg font-light text-white">{stat.name}</p>
             </motion.div>
           ))}
@@ -168,15 +172,21 @@ const socials = [
 const stats = [
   {
     name: "Years of experience",
-    value: "2+",
+    from: 0,
+    to: 2,
+    char: "+",
   },
   {
     name: "Projects completed",
-    value: "45+",
+    from: 0,
+    to: 45,
+    char: "+",
   },
   {
     name: "Happy clients",
-    value: "99%",
+    from: 0,
+    to: 99,
+    char: "%",
   },
 ];
 const InfiniteCarousel = () => {
