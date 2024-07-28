@@ -1,6 +1,8 @@
 import {
+  IconApps,
   IconBrandGithub,
   IconBrandInstagram,
+  IconBrandToyota,
   IconBrandWhatsapp,
   IconBrandX,
 } from "@tabler/icons-react";
@@ -115,7 +117,7 @@ const Hero = () => {
                 className="w-full h-full flex justify-center items-center"
                 target="_blank"
               >
-                <social.icon size={56} />
+                <social.icon size={56} strokeWidth={1.5} />
               </a>
             </motion.div>
           ))}

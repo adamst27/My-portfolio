@@ -1,84 +1,57 @@
-import { motion } from "framer-motion";
+import React, { useRef, memo, ReactNode } from "react";
+import { motion, useInView } from "framer-motion";
 
-export const RevealLinks = () => {
-  return (
-    <section className="grid place-content-center gap-2 bg-green-300 px-8 py-24 text-black">
-      <FlipLink href="#">Twitter</FlipLink>
-      <FlipLink href="#">Linkedin</FlipLink>
-      <FlipLink href="#">Facebook</FlipLink>
-      <FlipLink href="#">Instagram</FlipLink>
-    </section>
-  );
-};
+const DURATION = 0.3;
+const STAGGER = 0.03;
 
-const DURATION = 0.25;
-const STAGGER = 0.025;
-
-export const FlipLink = ({
-  children,
-  href,
-}: {
-  children: string;
-  href: string;
-}) => {
-  return (
-    <motion.a
-      initial="initial"
-      whileHover="hovered"
-      href={href}
-      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
-      style={{
-        lineHeight: 0.75,
+const Char = memo(
+  ({ char, charIndex }: { char: string; charIndex: number }) => (
+    <motion.span
+      key={charIndex}
+      className="inline-block"
+      style={{ display: char === " " ? "inline" : "inline-block" }}
+      variants={{
+        hidden: { y: "100%", opacity: 0 },
+        visible: { y: 0, opacity: 1 },
+      }}
+      transition={{
+        duration: DURATION,
+        ease: [0.215, 0.61, 0.355, 1],
+        delay: charIndex * STAGGER,
       }}
     >
-      <div>
-        {children.split("").map((l, i) => (
-          <motion.span
-            variants={{
-              initial: {
-                y: 0,
-              },
-              hovered: {
-                y: "-100%",
-              },
-            }}
-            transition={{
-              duration: DURATION,
-              ease: "easeInOut",
-              delay: STAGGER * i,
-            }}
-            className="inline-block"
-            key={i}
-          >
-            {l}
-          </motion.span>
-        ))}
-      </div>
-      <div className="absolute inset-0">
-        {children.split("").map((l, i) => (
-          <motion.span
-            variants={{
-              initial: {
-                y: "100%",
-              },
-              hovered: {
-                y: 0,
-              },
-            }}
-            transition={{
-              duration: DURATION,
-              ease: "easeInOut",
-              delay: STAGGER * i,
-            }}
-            className="inline-block"
-            key={i}
-          >
-            {l}
-          </motion.span>
-        ))}
-      </div>
-    </motion.a>
+      {char}
+    </motion.span>
+  )
+);
+
+const TextReveal = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className: string;
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  const characters = children
+    // @ts-ignore
+    ?.split("")
+    .map((char: any, index: any) => ({ char, index }));
+
+  return (
+    <motion.h2
+      ref={ref}
+      className={`overflow-hidden ${className}`}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+    >
+      {characters.map(({ char, index }: any) => (
+        <Char char={char} charIndex={index} key={index} />
+      ))}
+    </motion.h2>
   );
 };
 
-export default FlipLink;
+export default TextReveal;
