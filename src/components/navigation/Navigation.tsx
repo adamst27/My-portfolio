@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   IconBrandGithub,
   IconBrandInstagram,
@@ -10,7 +10,7 @@ import {
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const location = useLocation();
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -20,6 +20,9 @@ const Navigation = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -68,7 +71,7 @@ const Navigation = () => {
       <AnimatePresence>
         {!isScrolled && (
           <motion.nav
-            className="fixed top-0 left-0 w-full z-50 flex justify-center items-center h-20"
+            className="fixed top-0 left-0 w-full z-50  justify-center items-center h-20 lg:flex hidden"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
@@ -97,7 +100,7 @@ const Navigation = () => {
 
       <div
         className={`fixed top-4 right-4 z-50 ${
-          isScrolled ? "block" : "hidden"
+          isScrolled ? "block" : "lg:hidden block"
         }`}
       >
         <button

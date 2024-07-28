@@ -4,44 +4,28 @@ import TextReveal from "../animations/TextReveal";
 import { HThreeReveal } from "../animations/TextReveal";
 
 const About = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 60, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
-        ease: "easeOut",
+        duration: 0.4,
+        ease: "easeInOut",
       },
     },
   };
 
   return (
-    <motion.section
-      className="w-full py-24 sm:py-32 px-6 sm:px-12 lg:px-24 bg-slate-950 text-white"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
-      variants={containerVariants}
-    >
+    <section className="w-full py-24 sm:py-32 px-6 sm:px-12 lg:px-24 bg-slate-950 text-white">
       <div className="max-w-7xl mx-auto">
-        <TextReveal className="text-indigo-500 text-left font-light text-3xl sm:text-4xl lg:text-6xl mb-16 sm:mb-24 uppercase">
+        <TextReveal className="text-indigo-500 text-left font-light text-2xl sm:text-3xl lg:text-5xl mb-8 sm:mb-12 uppercase">
           Helping brands reach their full potential
         </TextReveal>
 
-        <div className="relative w-full h-[0.2px] bg-gray-800 z-10 my-20 sm:my-32 hidden sm:block">
+        <div className="relative w-full h-[0.2px] bg-gray-800 z-10 my-12 sm:my-20 hidden sm:block">
           <motion.div
-            className="absolute bg-indigo-700 right-1/4 top-[-60px] rounded-full flex justify-center items-center w-32 h-32 sm:w-40 sm:h-40 z-20"
+            className="absolute bg-indigo-700 right-1/4 top-[-60px] rounded-full flex justify-center items-center w-24 h-24 sm:w-32 sm:h-32 z-20"
             animate={{
               rotate: [0, 360],
               transition: {
@@ -51,7 +35,7 @@ const About = () => {
               },
             }}
           >
-            <IconBadgeTmFilled size={80} color="white" />
+            <IconBadgeTmFilled size={60} color="white" />
           </motion.div>
         </div>
 
@@ -60,9 +44,16 @@ const About = () => {
           alt="about-image"
           className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover object-center rounded-lg mb-20 sm:mb-32"
           variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
         />
 
-        <motion.div className="mb-24 sm:mb-32" variants={itemVariants}>
+        <motion.div
+          className="mb-24 sm:mb-32"
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+        >
           <HThreeReveal className="text-3xl sm:text-4xl font-light text-indigo-400 uppercase mb-8 sm:mb-12">
             MY STORY
           </HThreeReveal>
@@ -92,6 +83,8 @@ const About = () => {
               key={idx}
               className="flex flex-col gap-6"
               variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
             >
               <span className="text-lg text-indigo-300 font-bold text-left border-b border-gray-800 pb-4">
                 0{idx + 1}.
@@ -113,6 +106,8 @@ const About = () => {
         <motion.div
           className="grid gap-16 sm:gap-24 mb-24 sm:mb-32"
           variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
         >
           <div>
             <HThreeReveal className="text-2xl sm:text-3xl font-light text-indigo-300 mb-8 sm:mb-12">
@@ -156,7 +151,7 @@ const About = () => {
           </div>
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
@@ -169,7 +164,7 @@ const skills = [
   "Node.js",
   "Express.js",
   "MongoDB",
-  "PostgreSQL",
+  "Typescript",
   "Framer Motion",
   "Responsive Design",
   "RESTful APIs",

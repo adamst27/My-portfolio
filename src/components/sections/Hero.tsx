@@ -68,7 +68,7 @@ const Hero = () => {
           variants={itemVariants}
         >
           <motion.div
-            className="flex flex-col  w-full z-10  justify-start items-start text-left gap-2"
+            className="flex flex-col  w-full h-full z-10  justify-center items-start text-left gap-2"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -84,38 +84,45 @@ const Hero = () => {
               clients and help them acheive their goals with ease and
               efficiency, while also delivering exceptional user experiences.
             </motion.p>
-            <div className="flex flex-row gap-2 py-1">
+            <div className="flex flex-row gap-4 py-4">
               <Link
                 to={"/Contact"}
-                className="bg-black text-white border-2 border-border px-4 py-2 z-10 rounded-lg w-fit"
+                className="bg-transparent hover:bg-indigo-600 text-white border-2 border-indigo-600 px-6 py-3 z-10 rounded-lg w-fit transition-colors duration-300 ease-in-out"
               >
                 Contact me
               </Link>
               <Link
-                to={"/projects"}
-                className="bg-black text-white border-2 border-border px-4 py-2 z-10 rounded-lg w-fit"
+                to={"/work"}
+                className="bg-transparent hover:bg-indigo-600 text-white border-2 border-indigo-600 px-6 py-3 z-10 rounded-lg w-fit transition-colors duration-300 ease-in-out"
               >
-                Project
+                Projects
               </Link>
             </div>
           </motion.div>
         </motion.div>
 
         <motion.div
-          className="md:col-span-1 lg:col-span-4   grid grid-cols-2 grid-rows-2 gap-2"
+          className="md:col-span-1 lg:col-span-4 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 gap-2"
           variants={itemVariants}
         >
           {socials.map((social, idx) => (
             <motion.div
               key={idx}
-              className="flex  justify-center items-center col-span-1 row-span-1 bg-indigo-800 rounded-lg"
+              className="flex justify-center items-center col-span-1 bg-indigo-800 rounded-lg aspect-square"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <a
                 href={social.link}
                 className="w-full h-full flex justify-center items-center"
                 target="_blank"
+                rel="noopener noreferrer"
               >
-                <social.icon size={56} strokeWidth={1.5} />
+                <social.icon
+                  size={32}
+                  strokeWidth={1.5}
+                  className="text-white transition-colors duration-300"
+                />
               </a>
             </motion.div>
           ))}
