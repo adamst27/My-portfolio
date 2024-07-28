@@ -199,10 +199,14 @@ const stats = [
 const InfiniteCarousel = () => {
   const carouselItems = [
     "Web Development",
-    "Web Design",
+    "Web Applications",
     "Framer",
-    "Software Engineering",
-    "Wordpress",
+    "ReactJS",
+    "Typescipt",
+    "MongoDB",
+    "ExpressJS",
+    "NextJS",
+    "React",
   ];
 
   return (
