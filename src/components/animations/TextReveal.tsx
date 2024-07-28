@@ -4,27 +4,49 @@ import { motion, useInView } from "framer-motion";
 const DURATION = 0.3;
 const STAGGER = 0.03;
 
+const Char = memo(
+  ({ char, charIndex }: { char: string; charIndex: number }) => (
+    <motion.span
+      key={charIndex}
+      className="inline-block"
+      style={{ display: char === " " ? "inline" : "inline-block" }}
+      variants={{
+        hidden: { y: "100%", opacity: 0 },
+        visible: { y: 0, opacity: 1 },
+      }}
+      transition={{
+        duration: DURATION,
+        ease: [0.215, 0.61, 0.355, 1],
+        delay: charIndex * STAGGER,
+      }}
+    >
+      {char}
+    </motion.span>
+  )
+);
+
 const Word = memo(
-  ({ word, wordIndex }: { word: string; wordIndex: number }) => (
-    <span className="inline-block whitespace-nowrap mr-1">
+  ({
+    word,
+    wordIndex,
+    totalPreviousChars,
+  }: {
+    word: string;
+    wordIndex: number;
+    totalPreviousChars: number;
+  }) => (
+    <>
       {word.split("").map((char, charIndex) => (
-        <motion.span
+        <Char
+          char={char}
+          charIndex={totalPreviousChars + charIndex}
           key={charIndex}
-          className="inline-block"
-          variants={{
-            hidden: { y: "100%", opacity: 0 },
-            visible: { y: 0, opacity: 1 },
-          }}
-          transition={{
-            duration: DURATION,
-            ease: [0.215, 0.61, 0.355, 1],
-            delay: (wordIndex * word.length + charIndex) * STAGGER,
-          }}
-        >
-          {char}
-        </motion.span>
+        />
       ))}
-    </span>
+      {wordIndex !== undefined && (
+        <Char char=" " charIndex={totalPreviousChars + word.length} />
+      )}
+    </>
   )
 );
 
@@ -48,7 +70,12 @@ const TextReveal = ({
       animate={isInView ? "visible" : "hidden"}
     >
       {words.map((word, index) => (
-        <Word word={word} wordIndex={index} key={index} />
+        <Word
+          word={word}
+          wordIndex={index}
+          totalPreviousChars={words.slice(0, index).join(" ").length + index}
+          key={index}
+        />
       ))}
     </motion.h2>
   );
@@ -74,7 +101,12 @@ export const HThreeReveal = ({
       animate={isInView ? "visible" : "hidden"}
     >
       {words.map((word, index) => (
-        <Word word={word} wordIndex={index} key={index} />
+        <Word
+          word={word}
+          wordIndex={index}
+          totalPreviousChars={words.slice(0, index).join(" ").length + index}
+          key={index}
+        />
       ))}
     </motion.h3>
   );

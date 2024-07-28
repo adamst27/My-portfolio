@@ -7,7 +7,7 @@ const Projects = () => {
     <section className="w-full py-24 sm:py-32 px-6 sm:px-12 lg:px-24 bg-slate-950 text-white">
       <div className="max-w-7xl mx-auto">
         <TextReveal className="text-indigo-500 text-left font-light text-2xl sm:text-3xl lg:text-5xl mb-8 sm:mb-12 uppercase">
-          Helping brands reach their full potential
+          Take a look at my projects
         </TextReveal>
 
         <div className="relative w-full h-[0.2px] bg-gray-800 z-10 my-12 sm:my-20 hidden sm:block">
