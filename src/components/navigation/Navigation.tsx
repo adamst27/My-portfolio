@@ -35,7 +35,7 @@ const Navigation = () => {
     { Icon: IconBrandGithub, link: "https://github.com/adamst27" },
     { Icon: IconBrandInstagram, link: "https://instagram.com/stadagency_" },
     { Icon: IconBrandX, link: "https://x.com/vitocorleone2g" },
-    { Icon: IconBrandWhatsapp, link: "" },
+    { Icon: IconBrandWhatsapp, link: "https://wa.me/212666261476" },
   ];
 
   const menuVariants = {

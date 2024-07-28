@@ -73,10 +73,10 @@ const Contact = () => {
             <p className="text-indigo-200 text-lg sm:text-xl leading-relaxed">
               Email me at:{" "}
               <a
-                href="mailto:adam.stitou@example.com"
+                href="mailto:adamkoora27@gmail.com"
                 className="text-indigo-400 hover:text-indigo-300 transition-colors"
               >
-                adam.stitou@example.com
+                adamkoora27@gmail.com
               </a>
             </p>
           </motion.div>
@@ -123,7 +123,7 @@ const socials = [
   },
   {
     name: "Whatsapp",
-    link: "https://wa.me/2349070000000",
+    link: "https://wa.me/212666261476",
     icon: IconBrandWhatsapp,
   },
   {

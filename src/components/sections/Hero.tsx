@@ -166,7 +166,7 @@ const socials = [
   },
   {
     name: "Whatsapp",
-    link: "https://wa.me/2349070000000",
+    link: "https://wa.me/212666261476",
     icon: IconBrandWhatsapp,
   },
   {
