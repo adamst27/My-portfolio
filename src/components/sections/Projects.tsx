@@ -24,8 +24,61 @@ const Projects = () => {
           <IconBriefcase2Filled size={60} color="white" />
         </motion.div>
       </div>
+      <div className="my-28 grid lg:grid-cols-2 grid-cols-1 gap-16">
+        {projectsData.map((project, index) => (
+          <motion.div className="flex flex-col gap-6" key={index}>
+            <div className="flex bg-indigo-700 justify-center items-center py-16 px-6">
+              <img
+                src={project.image}
+                alt={project.name}
+                className="w-full aspect-[3/2] object-contain object-center"
+              />
+            </div>
+            <h3 className="font-light text-3xl text-left">{project.name}</h3>
+            <span className="full h-[0.2px] bg-gray-800"></span>
+            <div className="flex flex-row justify-between">
+              <h4 className="text-2xl text-indigo-200 uppercase">
+                {project.category}
+              </h4>
+              <p className="text-lg text-indigo-200">2024</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 };
 
+const projectsData = [
+  {
+    image: "/assets/infinittymedia.webp",
+    name: "Infinitty Media",
+    category: "Business site",
+  },
+  {
+    image: "/assets/entajia.webp",
+    name: "Alentajia",
+    category: "SaaS",
+  },
+  {
+    image: "/assets/stadteams.webp",
+    name: "STAD TEAMS",
+    category: "SaaS",
+  },
+  {
+    image: "/assets/stadbot.webp",
+    name: "STAD BOT",
+    category: "AI chatbot",
+  },
+  {
+    image: "/assets/livedocs.webp",
+    name: "LiveDocs",
+    category: "Text editor",
+  },
+  {
+    image: "/assets/khiyata.webp",
+    name: "Khiyata",
+    category: "INVOICES SOFTWARE",
+  },
+];
 export default Projects;

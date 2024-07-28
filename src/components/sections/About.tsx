@@ -76,7 +76,7 @@ const About = () => {
       </div>
 
       <TextReveal className="text-2xl sm:text-3xl font-light text-indigo-400 uppercase mb-8 sm:mb-12">
-        Using this large set of skills
+        Using this set of skills
       </TextReveal>
 
       <div className="grid gap-8 sm:gap-12 mb-12 sm:mb-16">
