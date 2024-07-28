@@ -1,8 +1,6 @@
 import {
-  IconApps,
   IconBrandGithub,
   IconBrandInstagram,
-  IconBrandToyota,
   IconBrandWhatsapp,
   IconBrandX,
 } from "@tabler/icons-react";

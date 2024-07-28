@@ -3,7 +3,7 @@ import {
   IconBadgeTmFilled,
   IconBrandToyota,
 } from "@tabler/icons-react";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import TextReveal from "../animations/TextReveal";
 
 const About = () => {

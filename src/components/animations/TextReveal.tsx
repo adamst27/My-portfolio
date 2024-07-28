@@ -1,4 +1,4 @@
-import React, { useRef, memo, ReactNode } from "react";
+import { useRef, memo, ReactNode } from "react";
 import { motion, useInView } from "framer-motion";
 
 const DURATION = 0.3;
