@@ -53,5 +53,32 @@ const TextReveal = ({
     </motion.h2>
   );
 };
+export const HThreeReveal = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className: string;
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
 
+  const characters = children
+    // @ts-ignore
+    ?.split("")
+    .map((char: any, index: any) => ({ char, index }));
+
+  return (
+    <motion.h3
+      ref={ref}
+      className={`overflow-hidden ${className}`}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+    >
+      {characters.map(({ char, index }: any) => (
+        <Char char={char} charIndex={index} key={index} />
+      ))}
+    </motion.h3>
+  );
+};
 export default TextReveal;

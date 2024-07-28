@@ -34,7 +34,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center relative py-12 md:py-20 overflow-hidden text-gray-200">
+    <section className="min-h-screen flex flex-col justify-center items-center relative py-12 md:py-28 overflow-hidden text-gray-200">
       <div className="absolute top-0 z-[2] h-full w-screen bg-slate-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
 
       <motion.div
@@ -164,7 +164,7 @@ const socials = [
   },
   {
     name: "X",
-    link: "https://github.com/vitocorleone2g",
+    link: "https://x.com/vitocorleone2g",
     icon: IconBrandX,
   },
 ];
