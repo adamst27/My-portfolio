@@ -89,9 +89,9 @@ const About = () => {
               <span className="text-lg text-indigo-300 font-bold text-left border-b border-gray-800 pb-4">
                 0{idx + 1}.
               </span>
-              <HThreeReveal className="text-2xl sm:text-3xl py-4 font-light text-white text-left">
+              <h3 className="text-2xl sm:text-3xl py-4 font-light text-white text-left">
                 {serv.name}
-              </HThreeReveal>
+              </h3>
               <p className="text-indigo-200 text-lg sm:text-xl leading-relaxed">
                 {serv.p}
               </p>

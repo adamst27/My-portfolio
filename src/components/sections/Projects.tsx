@@ -29,7 +29,7 @@ const Projects = () => {
         <div className="my-28 grid lg:grid-cols-2 grid-cols-1 gap-16">
           {projectsData.map((project, index) => (
             <motion.div className="flex flex-col gap-6" key={index}>
-              <div className="relative flex justify-center items-center overflow-hidden group h-[300px]">
+              <div className="relative flex justify-center items-center overflow-hidden group h-[300px] sm:h-[300px]">
                 <img
                   src={project.image}
                   alt={project.name}
@@ -38,11 +38,11 @@ const Projects = () => {
                 <motion.a
                   href={project.link}
                   target="_blank"
-                  className="absolute bottom-4 right-4 bg-indigo-700 text-white rounded-full h-28 w-28 px-4 py-2 flex items-center justify-center text-center"
+                  className="absolute bottom-4 right-4 bg-indigo-700 text-white rounded-full h-20 w-20 sm:h-28 sm:w-28 px-2 sm:px-4 py-2 flex items-center justify-center text-center"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className="font-light text-lg">
+                  <span className="font-light text-sm sm:text-lg">
                     {project.link.length > 1
                       ? "View Project"
                       : "Link not available"}

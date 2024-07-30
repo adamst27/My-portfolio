@@ -129,14 +129,14 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          className="md:col-span-2 lg:col-span-12 grid lg:grid-cols-3 grid-cols-1 gap-2"
+          className="md:col-span-2 lg:col-span-12 grid lg:grid-cols-2 grid-cols-1 gap-2"
           variants={itemVariants}
         >
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
               variants={itemVariants}
-              className="flex flex-col gap-2 justify-center items-center bg-indigo-800 p-6 rounded-lg"
+              className="flex flex-col  gap-2 justify-center items-center bg-indigo-800 p-6 rounded-lg"
             >
               <p className="text-3xl font-bold text-white">
                 <AnimatedCounter from={stat.from} to={stat.to} />
@@ -188,12 +188,6 @@ const stats = [
     from: 0,
     to: 45,
     char: "+",
-  },
-  {
-    name: "Happy clients",
-    from: 0,
-    to: 99,
-    char: "%",
   },
 ];
 const InfiniteCarousel = () => {

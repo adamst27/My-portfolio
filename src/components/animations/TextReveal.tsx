@@ -9,7 +9,7 @@ const Char = memo(
     <motion.span
       key={charIndex}
       className="inline-block"
-      style={{ display: char === " " ? "inline" : "inline-block" }}
+      style={{ display: "inline-block" }}
       variants={{
         hidden: { y: "100%", opacity: 0 },
         visible: { y: 0, opacity: 1 },
@@ -27,26 +27,23 @@ const Char = memo(
 
 const Word = memo(
   ({
-    word,
+    content,
     wordIndex,
     totalPreviousChars,
   }: {
-    word: string;
+    content: string;
     wordIndex: number;
     totalPreviousChars: number;
   }) => (
-    <>
-      {word.split("").map((char, charIndex) => (
+    <span style={{ whiteSpace: "pre" }}>
+      {content.split("").map((char, charIndex) => (
         <Char
           char={char}
           charIndex={totalPreviousChars + charIndex}
           key={charIndex}
         />
       ))}
-      {wordIndex !== undefined && (
-        <Char char=" " charIndex={totalPreviousChars + word.length} />
-      )}
-    </>
+    </span>
   )
 );
 
@@ -60,7 +57,8 @@ const TextReveal = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
-  const words = (children as string).split(" ");
+  const content = children as string;
+  const words = content.match(/\S+|\s+/g) || [];
 
   return (
     <motion.h2
@@ -71,9 +69,9 @@ const TextReveal = ({
     >
       {words.map((word, index) => (
         <Word
-          word={word}
+          content={word}
           wordIndex={index}
-          totalPreviousChars={words.slice(0, index).join(" ").length + index}
+          totalPreviousChars={words.slice(0, index).join("").length}
           key={index}
         />
       ))}
@@ -91,7 +89,8 @@ export const HThreeReveal = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
-  const words = (children as string).split(" ");
+  const content = children as string;
+  const words = content.match(/\S+|\s+/g) || [];
 
   return (
     <motion.h3
@@ -102,9 +101,9 @@ export const HThreeReveal = ({
     >
       {words.map((word, index) => (
         <Word
-          word={word}
+          content={word}
           wordIndex={index}
-          totalPreviousChars={words.slice(0, index).join(" ").length + index}
+          totalPreviousChars={words.slice(0, index).join("").length}
           key={index}
         />
       ))}
