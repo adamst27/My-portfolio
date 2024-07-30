@@ -28,7 +28,6 @@ const Char = memo(
 const Word = memo(
   ({
     content,
-    wordIndex,
     totalPreviousChars,
   }: {
     content: string;
