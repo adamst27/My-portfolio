@@ -186,7 +186,7 @@ const stats = [
   {
     name: "Projects completed",
     from: 0,
-    to: 45,
+    to: 20,
     char: "+",
   },
 ];
