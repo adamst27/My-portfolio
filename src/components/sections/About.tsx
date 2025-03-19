@@ -103,33 +103,7 @@ const About = () => {
   );
 };
 
-const skills = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Express.js",
-  "MongoDB",
-  "Typescript",
-  "Framer Motion",
-  "Responsive Design",
-  "RESTful APIs",
-  "Git",
-  "Webpack",
-  "Tailwind CSS",
-];
 
-const softSkills = [
-  "Communication",
-  "Leadership",
-  "Teamwork",
-  "Creativity",
-  "Problem-solving",
-  "Time Management",
-  "Adaptability",
-];
 
 const services = [
   {
