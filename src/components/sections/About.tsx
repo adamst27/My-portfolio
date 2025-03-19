@@ -98,59 +98,7 @@ const About = () => {
             </motion.div>
           ))}
         </div>
-
-        <TextReveal className="text-3xl sm:text-4xl font-light text-indigo-400 uppercase mb-16 sm:mb-24">
-          Using this set of skills
-        </TextReveal>
-
-        <motion.div
-          className="grid gap-16 sm:gap-24 mb-24 sm:mb-32"
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="visible"
-        >
-          <div>
-            <HThreeReveal className="text-2xl sm:text-3xl font-light text-indigo-300 mb-8 sm:mb-12">
-              Technical Skills
-            </HThreeReveal>
-            <div className="flex flex-wrap gap-6">
-              {skills.map((skill, idx) => (
-                <motion.div
-                  key={idx}
-                  className="bg-indigo-900 bg-opacity-30 rounded-lg px-6 py-3 text-indigo-200 text-base sm:text-lg"
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "rgba(79, 70, 229, 0.4)",
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {skill}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <HThreeReveal className="text-2xl sm:text-3xl font-light text-indigo-300 mb-8 sm:mb-12">
-              Soft Skills
-            </HThreeReveal>
-            <div className="flex flex-wrap gap-6">
-              {softSkills.map((skill, idx) => (
-                <motion.div
-                  key={idx}
-                  className="bg-indigo-800 bg-opacity-30 rounded-lg px-6 py-3 text-indigo-200 text-base sm:text-lg"
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "rgba(99, 102, 241, 0.4)",
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {skill}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      </div>
+        </div>
     </section>
   );
 };
