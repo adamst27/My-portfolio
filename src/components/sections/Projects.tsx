@@ -57,7 +57,7 @@ const Projects = () => {
                 <h4 className="text-2xl text-indigo-200 uppercase">
                   {project.category}
                 </h4>
-                <p className="text-lg text-indigo-200">2024</p>
+                <p className="text-lg text-indigo-200">{project.year}</p>
               </div>
             </motion.div>
           ))}
@@ -69,40 +69,92 @@ const Projects = () => {
 
 const projectsData = [
   {
+    image: "/assets/picschallenge.png",
+    name: "Pics Challenge",
+    category: "Quiz Game",
+    link: "https://b22.games/",
+    year: 2026,
+  },
+  {
+    image: "/assets/jfong.png",
+    name: "Evan Fong",
+    category: "Portfolio",
+    link: "https://www.footworkmgt.com/",
+    year: 2026,
+  },
+  {
+    image: "/assets/agomi.png",
+    name: "Agomi Studio",
+    category: "Business site",
+    link: "https://agomi.ai",
+    year: 2025,
+  },
+
+  {
+    image: "/assets/footwork.png",
+    name: "Footwork Management",
+    category: "Business site",
+    link: "https://www.footworkmgt.com/",
+    year: 2025,
+  },
+
+  {
+    image: "/assets/omira.png",
+    name: "Omira AI",
+    category: "Business site",
+    link: "https:/omira.ai/",
+    yaer: 2025,
+  },
+  {
     image: "/assets/infinittymedia.webp",
     name: "Infinitty Media",
     category: "Business site",
     link: "https://infinittymedia.com",
+    year: 2025,
   },
+  {
+    image: "/assets/langpath.png",
+    name: "LangPath",
+    category: "Webapp",
+    link: "https://langpath.vercel.app/",
+    year: 2024,
+  },
+
   {
     image: "/assets/entajia.webp",
     name: "Alentajia",
     category: "SaaS",
     link: "https://alentajia.com/",
+    year: 2024,
   },
-  {
-    image: "/assets/stadteams.webp",
-    name: "STAD TEAMS",
-    category: "SaaS",
-    link: "",
-  },
+
   {
     image: "/assets/stadbot.webp",
     name: "STAD BOT",
     category: "AI chatbot",
     link: "https://stadbot.vercel.app/",
+    year: 2024,
+  },
+  {
+    image: "/assets/travel.png",
+    name: "Travel",
+    category: "Landing Page",
+    link: "https://travel-landing-page-kappa.vercel.app/",
+    year: 2024,
   },
   {
     image: "/assets/livedocs.webp",
     name: "LiveDocs",
     category: "Text editor",
     link: "https://livedocs-indol.vercel.app/",
+    year: 2024,
   },
   {
     image: "/assets/khiyata.webp",
     name: "Khiyata",
     category: "INVOICES SOFTWARE",
     link: "",
+    year: 2024,
   },
 ];
 
