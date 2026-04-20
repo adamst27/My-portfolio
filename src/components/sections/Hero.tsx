@@ -53,7 +53,7 @@ const Hero = () => {
           className="text-lg md:text-xl lg:text-2xl font-light"
           variants={itemVariants}
         >
-          Crafting exceptional web experiences with React and NextJS.
+          Crafting exceptional web experiences with React and its ecosystem.
         </motion.p>
       </motion.div>
 
