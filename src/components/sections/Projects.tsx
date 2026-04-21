@@ -102,7 +102,7 @@ const projectsData = [
     image: "/assets/omira.png",
     name: "Omira AI",
     category: "Business site",
-    link: "https:/omira.ai/",
+    link: "https://omira.ai/",
     yaer: 2025,
   },
   {
