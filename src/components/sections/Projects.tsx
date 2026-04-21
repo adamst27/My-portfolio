@@ -79,7 +79,7 @@ const projectsData = [
     image: "/assets/jfong.png",
     name: "Evan Fong",
     category: "Portfolio",
-    link: "https://www.footworkmgt.com/",
+    link: "https://www.evanfong.vercel.app/",
     year: 2026,
   },
   {
